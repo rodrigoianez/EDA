@@ -1,4 +1,4 @@
-package main;
+package eda1.practicas.practica01;
 
 import java.util.Iterator;
 import java.util.LinkedList;

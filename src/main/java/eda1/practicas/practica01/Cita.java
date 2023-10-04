@@ -1,4 +1,4 @@
-package main;
+package eda1.practicas.practica01;
 
 import eda1.practicas.auxiliar.Format;
 
