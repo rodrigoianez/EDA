@@ -1,0 +1,8 @@
+%%Archivo de entrada de datos
+%%Formato:
+%% nombre de la mascota, especie y número de citas
+
+
+pepa             perro 1
+    pepa gato 2
+pepa loro            1
