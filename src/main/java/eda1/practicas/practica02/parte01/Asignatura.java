@@ -15,11 +15,20 @@ public class Asignatura implements Comparable<Asignatura>, Iterable<String>{
     	//Se inicializa la colección docentesId (fijaros siempre en el uso del singular/plural)
     	//3 líneas
     	//...
+    	
+    	this.asignaturaId = asignaturaId == null || asignaturaId.isBlank() ? "sinNombre" : asignaturaId.trim().toLowerCase();  
+    	this.cuatrimestre = cuatrimestre < 1 || cuatrimestre > 8 ? 0 : cuatrimestre;
+    	this.docentesId = new ArrayList<>();
     }
-
     public Asignatura(String asignaturaId) {
     	//Este constructor lo queremos para hacer búsquedas, ¿verdad?
         //cuatrimestre a 0 y docentesId a null
+    	
+    	//this(asignaturaId,0) Esto es lo mismo que las 3 lineas de abajo, llama al constructor de arriba. Usar cuanod no esté inicializado a nulo
+    	
+    	this.asignaturaId = asignaturaId == null || asignaturaId.isBlank() ? "sinNombre" : asignaturaId.trim().toLowerCase();  
+    	this.cuatrimestre = 0;
+    	this.docentesId = null;
     }
 
     public int getCuatrimestre() {
@@ -35,11 +44,18 @@ public class Asignatura implements Comparable<Asignatura>, Iterable<String>{
     	//De forma interna, tratamos al parámetro docentesId (fíjate en la s) como si fuese un array simple
     	//1 for()
     	//...
+    	
+    	for(String docentes : docentesId) {
+    		if(!this.docentesId.contains(docentes.toLowerCase())) {
+    			this.docentesId.add(docentes.toLowerCase());
+    		}
+    		
+    	}
     }
 
     public boolean esDocente(String docenteId) {
         if (docenteId == null || docenteId.isEmpty()) return false;
-        return //...
+        return this.docentesId.contains(docenteId.toLowerCase());
     }
 
     public void clear() {
@@ -47,8 +63,8 @@ public class Asignatura implements Comparable<Asignatura>, Iterable<String>{
     }
 
     public String toStringDocentes(Comparator<String> comp) {
-        //Ordenamos según la lógica del comparador comp. Coste de la operación?
-    	//...
+        //Ordenamos según la lógica del comparador comp. Coste de la operación? nlog(n)
+    	this.docentesId.sort(comp);
         return this.docentesId.toString();
     }
 
@@ -68,7 +84,7 @@ public class Asignatura implements Comparable<Asignatura>, Iterable<String>{
 
             default: cuatrimestre = "?º-?C";
         }
-        return //...
+        return this.asignaturaId + " (" + cuatrimestre + ")";
     }
 
     @Override
@@ -82,13 +98,12 @@ public class Asignatura implements Comparable<Asignatura>, Iterable<String>{
     public int compareTo(Asignatura other) {
     	//Clave única this.asignaturaId (orden ascendente)
     	//1 única línea
-        return //...
-    }
+        return this.asignaturaId.compareTo(other.asignaturaId);    }
 
 	@Override
 	public Iterator<String> iterator() {
 		//Iterar sobre una asignatura equivale a iterar sobre la colección de profesores responsables de la misma
 		//1 única línea
-		return //...
+		return this.docentesId.iterator();
 	}
 }

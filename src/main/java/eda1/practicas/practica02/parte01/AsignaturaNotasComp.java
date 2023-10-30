@@ -10,8 +10,9 @@ public class AsignaturaNotasComp implements Comparator<AsignaturaNotas>{
 		//Clave principal: cuatrimestre (ascendente)
 		//Clave secundaria: identificador de asignatura (asendente)
 		//2 líneas
-		int cmp = Integer.compare(...);
-		return cmp != 0 ? //...
+		int cmp = Integer.compare(asigNotas01.getAsignatura().getCuatrimestre(),	
+				asigNotas02.getAsignatura().getCuatrimestre());
+		return cmp != 0 ? cmp : asigNotas01.compareTo(asigNotas02);
 	}
 
 }
