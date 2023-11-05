@@ -1,24 +1,19 @@
 package eda1.practicas.practica02.parte01;
 
+
 import eda1.practicas.auxiliar.AVLTree;
 import eda1.practicas.auxiliar.Format;
 import eda1.practicas.auxiliar.Par;
-import eda1.practicas.practica02.parte03.Stirnf;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class GestionEstudiantes implements Iterable<Par<Integer, ArrayList<Par<String, String>>>>{
 
-	private final String centroId; // Identificador de Centro/Facultad
-	private final AVLTree<Asignatura> asignaturasOfertadas; // Conjunto de asignaturas ofertadas por el Centro en un
-															// curso académico en concreto
-	private final AVLTree<Estudiante> estudiantesMatriculados; // Conjunto de alumnos matriculados en el Centro en un
-																// curso académico en concreto
+	private final String centroId; 
+	private final AVLTree<Asignatura> asignaturasOfertadas; 
+	private final AVLTree<Estudiante> estudiantesMatriculados; 
 
 	public GestionEstudiantes(String centroId) {
 		this.centroId = centroId.trim();
@@ -33,35 +28,20 @@ public class GestionEstudiantes implements Iterable<Par<Integer, ArrayList<Par<S
 
 	public void addAsignaturas(Asignatura... asignaturas) {
 		for (Asignatura asignatura : asignaturas) {
-			// 1 línea
 			this.asignaturasOfertadas.add(asignatura);
 		}
 	}
 
 	public void addEstudiantes(Estudiante... estudiantes) {
-		// ¿por qué Eclipse señala como error this.estudiantes?
 		for (Estudiante estudiante : estudiantes) {
-			// 1 línea
 			this.estudiantesMatriculados.add(estudiante);
 		}
 	}
 
 	public boolean addMatricula(String estudianteId, String... asignaturasId) {
-		// Método esencial...importante...básico...relevante.
-		// Si el estudiante con identificador estudianteId no existe, devuelve false y
-		// finaliza
-		// En este caso se hará uso del método find()
-		// 2 líneas
 		Estudiante estudiante = this.estudiantesMatriculados.find(new Estudiante(estudianteId));
 		if (estudiante == null)
 			return false;
-
-		// Asignatura por asignatura, se va comprobando si existe en la colección
-		// this.asignaturasOfertadas
-		// Si no existe, se ignora y se pasa a la siguiente
-		// Si existe, se añade su referencia al estudiante (addAsignatura) para que
-		// conste en su matrícula
-		// 1 for()
 		for (String asignatura : asignaturasId) {
 			Asignatura asignaturaAux = this.asignaturasOfertadas.find(new Asignatura(asignatura));
 			if (asignaturaAux == null)
@@ -70,13 +50,9 @@ public class GestionEstudiantes implements Iterable<Par<Integer, ArrayList<Par<S
 
 		}
 		return true;
-		// Pregunta: ¿Para qué necesitamos this.asignaturasOfertadas? ¿Qué implicaría su
-		// NO utilización? (pista: 1 objeto, múltiples referencias...)
 	}
 
 	public boolean addNotas(String estudianteId, String asignaturaId, Double... notas) {
-		// Si el estudiante no existe (find()), se devuelve false.
-		// 2 líneas
 		Estudiante estudianteCurr = this.estudiantesMatriculados.find(new Estudiante(estudianteId));
 		if (estudianteCurr == null)
 			return false;
@@ -84,15 +60,11 @@ public class GestionEstudiantes implements Iterable<Par<Integer, ArrayList<Par<S
 	}
 
 	public String getNotaMedia(String estudianteId) {
-		// Si el estudiante con identificador estudianteId no existe, se devuelve null;
-		// en caso contrario, se devuelve su nota media
-		// 2 líneas
 		Estudiante estudiante = this.estudiantesMatriculados.find(new Estudiante(estudianteId));
 		return estudiante == null ? null : estudiante.getNotaMedia();
 	}
 
 	public String getNotaMedia(String estudianteId, String asignaturaId) {
-		// 2 líneas
 		Estudiante estudiante = this.estudiantesMatriculados.find(new Estudiante(estudianteId));
 		return estudiante == null ? null : estudiante.getNotaMedia(asignaturaId);
 	}
@@ -100,7 +72,6 @@ public class GestionEstudiantes implements Iterable<Par<Integer, ArrayList<Par<S
 	public String getNotaMediaAsignatura(String asignaturaId) {
 		int cont = 0;
 		double suma = .0;
-		// 1 for()
 		for (Estudiante estudiante : estudiantesMatriculados) {
 			String aux = estudiante.getNotaMedia(asignaturaId);
 			if (aux != null) {
@@ -112,12 +83,10 @@ public class GestionEstudiantes implements Iterable<Par<Integer, ArrayList<Par<S
 	}
 
 	public String getEquipoDocenteEstudiante(String estudianteId) {
-		// Si el estudiante con identificador estudianteId no existe, se devuelve "[]"
 		Estudiante estudiante = this.estudiantesMatriculados.find(new Estudiante(estudianteId));
 		if (estudiante == null)
 			return "[]";
 		ArrayList<String> result = new ArrayList<>();
-		// 2 for() anidados
 		for (AsignaturaNotas asignatura : estudiante) {
 			for (String profesor : asignatura.getAsignatura()) {
 				if (!result.contains(profesor)) {
@@ -125,15 +94,10 @@ public class GestionEstudiantes implements Iterable<Par<Integer, ArrayList<Par<S
 				}
 			}
 		}
-		// Cuidado con el orden...
 		result.sort(null);
 		return result.toString();
 	}
-
-	/**
-	 * @param fileName
-	 * @return
-	 */
+	
 	public boolean load(String fileName) {
 		Scanner scan;
 		String line;
@@ -155,7 +119,6 @@ public class GestionEstudiantes implements Iterable<Par<Integer, ArrayList<Par<S
 				items = line.split("[ ]+");
 				switch (items[0]) {
 				case "@Asignaturas":
-					// 1 for()
 					
 					int nAsignaturas = Integer.parseInt(items[1]);
 					for (int i = 0; i < nAsignaturas; i++) {
@@ -168,7 +131,6 @@ public class GestionEstudiantes implements Iterable<Par<Integer, ArrayList<Par<S
 					}
 					break;
 				case "@Estudiantes":
-					// 1 for()
 
 					int nEstudiantes = Integer.parseInt(items[1]);
 					for (int i = 0; i < nEstudiantes; i++) {
@@ -178,7 +140,6 @@ public class GestionEstudiantes implements Iterable<Par<Integer, ArrayList<Par<S
 					}
 					break;
 				case "@Matriculas":
-					// 2 for() anidados
 
 					int nMatriculas = Integer.parseInt(items[1]);
 					for (int i = 0; i < nMatriculas; i++) {
@@ -191,7 +152,6 @@ public class GestionEstudiantes implements Iterable<Par<Integer, ArrayList<Par<S
 					}
 					break;
 				case "@Notas":
-					// 2 for() anidados
 					int nNotas = Integer.parseInt(items[1]);
 					for(int i = 0; i < nNotas; i++) {
 						line = scan.nextLine().trim();

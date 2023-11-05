@@ -5,11 +5,10 @@ import java.util.*;
 import eda1.practicas.auxiliar.Format;
 
 public class Estudiante implements Comparable<Estudiante>, Iterable<AsignaturaNotas>{
-    private final String alumnoId; //Identificador de alumno (clave única)
-    private final ArrayList<AsignaturaNotas> matricula; //Relación 1:N, 1 estudiante --> N asiganturas; 1 asignatura --> M notas
+    private final String alumnoId;
+    private final ArrayList<AsignaturaNotas> matricula; 
 
     public Estudiante(String alumnoId) {
-        //2 líneas
     	this.alumnoId = alumnoId.toLowerCase();
     	this.matricula = new ArrayList<>();
     }
@@ -25,8 +24,6 @@ public class Estudiante implements Comparable<Estudiante>, Iterable<AsignaturaNo
     }
 
     public boolean addNotas(String asignaturaId, Double... notas) {
-    	//Buscamos la asignatura (indexOf); Si no está, false; si está, añadimos la nota
-    	//3 líneas
     	int indice = this.matricula.indexOf(new AsignaturaNotas(asignaturaId));
     	if(indice == -1)return false;
     	this.matricula.get(indice).addNotas(notas);
@@ -42,8 +39,6 @@ public class Estudiante implements Comparable<Estudiante>, Iterable<AsignaturaNo
     }
 
     public String getNotaMedia(String asignaturaId) {
-    	//Buscamos asignatura; si no está se devuelve null; en caso contrario devolvemos la nota media
-    	//2 líneas
     	int indice = this.matricula.indexOf(new AsignaturaNotas(asignaturaId));
         return indice == -1 ? null : this.matricula.get(indice).getNotaMedia();
     }
@@ -56,8 +51,7 @@ public class Estudiante implements Comparable<Estudiante>, Iterable<AsignaturaNo
     }
 
     @Override
-    public String toString() {
-    	//Cuidado con el orden..hay que ordenar this.matricula, ¿verdad? ¿Qué comparator utilizamos? 
+    public String toString() { 
         String result = "Estudiante con id = " + this.alumnoId;
         //1 for()
         this.matricula.sort(new AsignaturaNotasComp());

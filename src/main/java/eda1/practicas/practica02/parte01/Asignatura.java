@@ -5,26 +5,17 @@ import java.util.Comparator;
 import java.util.Iterator;
 
 public class Asignatura implements Comparable<Asignatura>, Iterable<String>{
-    private final String asignaturaId; //código de 
-    private final int cuatrimestre; //dato informativo que utilizaremos para ordenar según criterio distinto al orden natural
-    private final ArrayList<String> docentesId; //colección de docentes responsables de la asignatura
+    private final String asignaturaId;  
+    private final int cuatrimestre; 
+    private final ArrayList<String> docentesId; 
     
     public Asignatura(String asignaturaId, int cuatrimestre) {
-    	//Si el parámetro asignaturaId es null o vacío, se le asignará el id "sinNombre" (atención mayúsculas y espacios en blanco delante y detrás....)
-        //Si el parámetro cuatrimestre es menor que 1 o mayor que 8 se le asigna el valor 0
-    	//Se inicializa la colección docentesId (fijaros siempre en el uso del singular/plural)
-    	//3 líneas
-    	//...
     	
     	this.asignaturaId = asignaturaId == null || asignaturaId.isBlank() ? "sinNombre" : asignaturaId.trim().toLowerCase();  
     	this.cuatrimestre = cuatrimestre < 1 || cuatrimestre > 8 ? 0 : cuatrimestre;
     	this.docentesId = new ArrayList<>();
     }
     public Asignatura(String asignaturaId) {
-    	//Este constructor lo queremos para hacer búsquedas, ¿verdad?
-        //cuatrimestre a 0 y docentesId a null
-    	
-    	//this(asignaturaId,0) Esto es lo mismo que las 3 lineas de abajo, llama al constructor de arriba. Usar cuanod no esté inicializado a nulo
     	
     	this.asignaturaId = asignaturaId == null || asignaturaId.isBlank() ? "sinNombre" : asignaturaId.trim().toLowerCase();  
     	this.cuatrimestre = 0;
@@ -41,9 +32,6 @@ public class Asignatura implements Comparable<Asignatura>, Iterable<String>{
 
     
     public void addDocentes(String... docentesId) {
-    	//De forma interna, tratamos al parámetro docentesId (fíjate en la s) como si fuese un array simple
-    	//1 for()
-    	//...
     	
     	for(String docentes : docentesId) {
     		if(!this.docentesId.contains(docentes.toLowerCase())) {
@@ -63,14 +51,12 @@ public class Asignatura implements Comparable<Asignatura>, Iterable<String>{
     }
 
     public String toStringDocentes(Comparator<String> comp) {
-        //Ordenamos según la lógica del comparador comp. Coste de la operación? nlog(n)
     	this.docentesId.sort(comp);
         return this.docentesId.toString();
     }
 
     @Override
     public String toString() {
-    	//Método casi casi de regalo :)
         String cuatrimestre;
         switch (this.cuatrimestre) {
             case 1: cuatrimestre = "1º-1C"; break;
@@ -96,14 +82,10 @@ public class Asignatura implements Comparable<Asignatura>, Iterable<String>{
 
     @Override
     public int compareTo(Asignatura other) {
-    	//Clave única this.asignaturaId (orden ascendente)
-    	//1 única línea
         return this.asignaturaId.compareTo(other.asignaturaId);    }
 
 	@Override
 	public Iterator<String> iterator() {
-		//Iterar sobre una asignatura equivale a iterar sobre la colección de profesores responsables de la misma
-		//1 única línea
 		return this.docentesId.iterator();
 	}
 }

@@ -10,7 +10,7 @@ public class Cita {
     private final ArrayList<String> valoraciones; 
 
     public static void inicializaNumCitas() {
-        numCitas = 0; //se podría escribir this.numCitas = 0 ????? No, ya que numCitas se ha definido como una variable static.
+        numCitas = 0; 
     }
 
     public Cita() {

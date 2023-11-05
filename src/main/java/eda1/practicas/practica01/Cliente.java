@@ -48,12 +48,8 @@ public class Cliente implements Comparable<Cliente>, Iterable<Mascota>{
     }
 
     public ArrayList<ArrayList<Integer>> getCitasId(){
-    	//Hacemos uso de estas dos variables locales
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         ArrayList<Integer> aux;
-        //2 for() anidados tipo forEach
-        //En el primer for() se itera sobre las mascotas y, para cada mascota, se itera sobre las citas
-        
         for (Mascota mascota : mascotas) {
         	aux = new ArrayList<Integer>();
         	for(Cita cita : mascota) {
@@ -66,12 +62,8 @@ public class Cliente implements Comparable<Cliente>, Iterable<Mascota>{
     }
 
     public ArrayList<ArrayList<Integer>> getCitasId(String palabra) {
-    	//Hacemos uso de estas dos variables locales
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         ArrayList<Integer> aux;
-        //2 for() anidados tipo forEach
-        //Muy similar al anterior, solo que en este caso queremos únicamente las citas que incluyan entre sus valoraciones la palabra que se indica como parámetro de entrada
-        
         for (Mascota mascota : mascotas) {
         	aux = new ArrayList<Integer>();
         	for(Cita cita : mascota) {
@@ -85,11 +77,9 @@ public class Cliente implements Comparable<Cliente>, Iterable<Mascota>{
     }
 
     public ArrayList<Integer> getCitasId(String nombre, String especie){
-        //Si la mascota con clave (nombre, especie) no existe, se devuelve null;
         ArrayList<Integer> result = new ArrayList<>();
         int index= this.mascotas.indexOf(new Mascota(nombre,especie));
-        if(index == -1) return null;        
-        //1 for() tipo forEach
+        if(index == -1) return null;   
         for(Cita cita : this.mascotas.get(index)) {
         	result.add(cita.getCitaId());
         	
@@ -99,8 +89,6 @@ public class Cliente implements Comparable<Cliente>, Iterable<Mascota>{
 
     public Cita getCita(int citaId){
         Cita result = null;
-        //1 for()
-        //Interesa el uso de break, ¿verdad?
         for(Mascota mascota : mascotas) {
         	result = mascota.getCita(citaId);
         	if(result != null) break;
@@ -109,7 +97,6 @@ public class Cliente implements Comparable<Cliente>, Iterable<Mascota>{
     }
 
     public Mascota getMascota(int citaId){
-        //1 for() con 1 único if
         for(Mascota mascota : mascotas) {
         	if(mascota.getCita(citaId) != null) {
         		return mascota;
@@ -125,9 +112,6 @@ public class Cliente implements Comparable<Cliente>, Iterable<Mascota>{
 
     public String toStringExtended() {
         String result = this.nombre + " -> {";
-        //1 for() tipo forEach
-        //Hacemos uso del método toStringExtended() de mascota
-        //Cuidado con la última coma...
         int i = 0;
         for (Mascota m : mascotas) {
         	
@@ -173,7 +157,7 @@ public class Cliente implements Comparable<Cliente>, Iterable<Mascota>{
 	@Override
 	public int compareTo(Cliente o) {
 		
-		return this.nombre.substring(8).compareTo(o.nombre.substring(8)); //¿split?
+		return this.nombre.substring(8).compareTo(o.nombre.substring(8)); 
 	}
 
 	@Override

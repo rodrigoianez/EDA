@@ -7,17 +7,14 @@ import java.util.Iterator;
 
 public class AsignaturaNotas implements Comparable<AsignaturaNotas>, Iterable<String>{
     private final Asignatura asignatura; 
-    private final ArrayList<String> notas; //Atención al parámetro String...uso de eda1.practicas.auxiliar/Format
-
+    private final ArrayList<String> notas; 
+    
     public AsignaturaNotas(Asignatura asignatura) {
-    	//2 líneas
     	this.asignatura = asignatura;
     	this.notas = new ArrayList<>();
     }
 
     public AsignaturaNotas(String asignaturaId) {
-    	//2 líneas
-    	//this(new Asignatura(asignaturaId));
     	this.asignatura = new Asignatura(asignaturaId);
     	this.notas = new ArrayList<>();
     	
@@ -28,8 +25,6 @@ public class AsignaturaNotas implements Comparable<AsignaturaNotas>, Iterable<St
     }
 
     public void addNotas(Double... notas) {
-    	//Vamos a permitir que se inserten notas nulas. En caso de encontrar un null, internamente lo almacenamos como el String "0.00"
-    	//1 for()
         for(Double nota : notas) {
         	this.notas.add(nota == null ? "0.00" : Format.formatDouble(nota,2));
         	
@@ -65,14 +60,12 @@ public class AsignaturaNotas implements Comparable<AsignaturaNotas>, Iterable<St
 
     @Override
     public int compareTo(AsignaturaNotas other) {
-    	//Clave principal: this.asignatura (orden ascendente)
         return this.asignatura.compareTo(other.asignatura);
         		
     }
 
 	@Override
 	public Iterator<String> iterator() {
-		//¿Seguro? Revisa bien esta propuesta....
 		return this.notas.iterator();
 	}
 }

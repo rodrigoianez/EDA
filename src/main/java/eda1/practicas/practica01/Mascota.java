@@ -16,11 +16,6 @@ public class Mascota implements Comparable<Mascota>, Iterable<Cita> {
     }	
 
     public Cita addCita() {
-       
-    	//Cita c = new Cita();
-    	//this.historial.add(c);
-    	//return c;
-
     	 this.historial.add(new Cita());
     	 return this.historial.getLast();
     }
