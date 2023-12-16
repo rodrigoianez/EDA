@@ -1,12 +1,13 @@
 package eda1.practicas.practica02.parte02;
 
 import org.junit.jupiter.api.MethodOrderer;
+
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import eda1.practicas.auxiliar.Par;
-import eda1.practicas.practica01.Format;
+import eda1.practicas.auxiliar.Format;
 
 import static org.junit.jupiter.api.Assertions.*;
 

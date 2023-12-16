@@ -1,21 +1,21 @@
 package eda1.practicas.practica02.parte02;
 
 import eda1.practicas.auxiliar.AVLTree;
+
 import eda1.practicas.auxiliar.Par;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Cliente implements Comparable<Cliente>, Iterable<Par<Mascota, ArrayList<ArrayList<String>>>>{
 	
-    private final String nombre;
+    protected final String nombre;
     
     public String getNombre() {
 		return nombre;
 	}
 
-	private final AVLTree<Par<Mascota, ArrayList<ArrayList<String>>>> datos;
+	protected final AVLTree<Par<Mascota, ArrayList<ArrayList<String>>>> datos;
 
     public Cliente(String nombre) {
         this.nombre = nombre.trim().toLowerCase();
