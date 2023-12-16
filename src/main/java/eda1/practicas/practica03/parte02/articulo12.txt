@@ -1,0 +1,12 @@
+	Las tecnicas de mineria de datos permiten obtener conocimiento
+oculto en grandes cantidades de datos con informacion valiosa que, al
+explotarse, ofrece ventajas competitivas a las organizaciones. En el caso de las
+instituciones de educacion superior, existen muchos datos respecto a los
+estudiantes, utiles para tomar decisiones estrategicas en pro de los mismos. Con
+base en esto, se han aplicado tecnicas de mineria de datos para buscar predecir
+la desercion escolar en la Universidad Tecnologica de Izucar de Matamoros,
+tomando como base de analisis los datos del estudio socioeconomico del
+EXANI-II, elaborado por el CENEVAL, mismo que se aplica desde el 2003 en
+nuestra institucion. Para esta investigacion se utilizaron especificamente dos
+algoritmos: el algoritmo de arboles de clasificacion C4.5 y el algoritmo de los k
+vecinos mas cercanos.

@@ -1,0 +1,7 @@
+El uso de los grandes datos y la estadistica avanzada en el deporte es relativamente 
+reciente. Si enfocamos la vista al mundo del tenis, se encuentran pocos precedentes. 
+En este trabajo, se propone realizar un modelo de predictivo basado en algoritmos de 
+Machine Learning para saber la duracion de un partido de tenis antes de que se dispute, 
+para facilitar la organizacion de los torneos y las parrillas televisivas. 
+En segundo lugar, se propone realizar un modelo de clasificacion que permita explicar 
+que influye en la victoria o la derrota del tenista espaniol Rafael Nadal.

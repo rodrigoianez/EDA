@@ -1,0 +1,107 @@
+@Ejemplo de archivo de entrada formado por la 3-upla...
+    @ Empresa - Proyecto - Ciudad
+   @ Todas las líneas que comiencen con el símbolo @ son consideradas comentarios y, por lo tanto, deberán ser ignoradas
+		empresa02 - proyecto02_03 - ciudad11
+empresa04 - proyecto04_03 - ciudad01
+empresa05 - proyecto05_02 - ciudad06
+empresa01 - proyecto01_03 - ciudad17
+empresa02 - proyecto02_01 - ciudad03
+
+
+
+empresa04 - proyecto04_05 - ciudad04
+empresa05 - proyecto05_02 - ciudad09
+empresa06 - proyecto06_01 - ciudad03
+empresa02 - proyecto02_01 - ciudad04
+empresa04 - proyecto04_04 - ciudad10
+empresa02 - proyecto02_01 - ciudad04
+empresa03 - proyecto03_02 - ciudad01
+empresa04 - proyecto04_02 - ciudad09
+empresa02 - proyecto02_02 - ciudad09
+empresa05 - proyecto05_01 - ciudad09
+empresa04 - proyecto04_01 - ciudad07
+empresa01 - proyecto01_01 - ciudad01
+empresa05 - proyecto05_02 - ciudad05
+empresa04 - proyecto04_03 - ciudad04
+empresa03 - proyecto03_01 - ciudad15
+
+
+
+empresa04 - proyecto04_04 - ciudad05
+empresa01 - proyecto01_02 - ciudad09
+					empresa04 - proyecto04_05 - ciudad03
+empresa03 - proyecto03_03 - ciudad09
+empresa04 - proyecto04_03 - ciudad06
+
+
+
+
+empresa05 - proyecto05_01 - ciudad02
+empresa02 - proyecto02_02 - ciudad04
+empresa04 - proyecto04_04 - ciudad09
+empresa03 - proyecto03_03 - ciudad16
+empresa02 - proyecto02_02 - ciudad05
+empresa04 - proyecto04_05 - ciudad03
+empresa05 - proyecto05_01 - ciudad09
+empresa04 - proyecto04_02 - ciudad01
+empresa01 - proyecto01_03 - ciudad08
+empresa03 - proyecto03_02 - ciudad07
+empresa04 - proyecto04_02 - ciudad03
+empresa05 - proyecto05_01 - ciudad13
+empresa02 - proyecto02_03 - ciudad05
+empresa04 - proyecto04_05 - ciudad09
+empresa06 - proyecto06_01 - ciudad10
+empresa04 - proyecto04_01 - ciudad02
+				empresa02 - proyecto02_02 - ciudad08
+empresa01 - proyecto01_02 - ciudad07
+empresa05 - proyecto05_02 - ciudad03
+empresa04 - proyecto04_01 - ciudad10
+@
+
+@
+empresa03 - proyecto03_01 - ciudad07
+empresa02 - proyecto02_02 - ciudad06
+empresa04 - proyecto04_02 - ciudad05
+empresa05 - proyecto05_02 - ciudad04
+empresa04 - proyecto04_05 - ciudad13
+empresa02 - proyecto02_01 - ciudad02
+empresa01 - proyecto01_01 - ciudad14
+empresa04 - proyecto04_01 - ciudad03
+empresa03 - proyecto03_01 - ciudad06
+empresa04 - proyecto04_02 - ciudad04
+empresa02 - proyecto02_03 - ciudad02
+empresa05 - proyecto05_02 - ciudad03
+empresa02 - proyecto02_02 - ciudad07
+empresa04 - proyecto04_04 - ciudad04
+empresa02 - proyecto02_03 - ciudad12
+empresa03 - proyecto03_01 - ciudad10
+empresa04 - proyecto04_04 - ciudad03
+empresa03 - proyecto03_03 - ciudad05
+empresa02 - proyecto02_03 - ciudad09
+empresa04 - proyecto04_05 - ciudad07
+empresa03 - proyecto03_03 - ciudad18
+empresa01 - proyecto01_01 - ciudad04
+empresa02 - proyecto02_02 - ciudad10
+@
+
+empresa03 - proyecto03_02 - ciudad11
+empresa04 - proyecto04_01 - ciudad03
+empresa05 - proyecto05_02 - ciudad01
+empresa04 - proyecto04_03 - ciudad13
+empresa03 - proyecto03_02 - ciudad13
+empresa02 - proyecto02_03 - ciudad03
+empresa04 - proyecto04_03 - ciudad09
+empresa01 - proyecto01_02 - ciudad12
+empresa05 - proyecto05_02 - ciudad07
+empresa03 - proyecto03_02 - ciudad09
+empresa02 - proyecto02_01 - ciudad01
+empresa05 - proyecto05_01 - ciudad04
+empresa01 - proyecto01_03 - ciudad19
+empresa06 - proyecto06_01 - ciudad04
+empresa05 - proyecto05_01 - ciudad18
+empresa04 - proyecto04_03 - ciudad09
+empresa03 - proyecto03_01 - ciudad04
+empresa02 - proyecto02_03 - ciudad03 
+
+@
+

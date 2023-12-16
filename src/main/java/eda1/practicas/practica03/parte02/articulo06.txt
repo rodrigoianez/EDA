@@ -1,0 +1,40 @@
+	La reutilizacion es uno de los conceptos clave dentro de ingenieria del software, 
+ya que permite racionalizar y agilizar el desarrollo de sistemas basandose en el
+aprovechamiento de componentes ya desarrollados y probados. 
+Es natural extender este enfoque a otros campos de la informatica, 
+y es una de las bases sobre las que se asienta la idea del desarrollo 
+de repositorios de objetos de aprendizaje (ROA, learning object repository - LOR),
+gracias a los cuales cualquier docente puede aprovechar objetos de aprendizaje (OA, learning objetcs - LO)
+desarrollados por algun otro colega. El potencial de los ROA se maximiza gracias a 
+Internet, que permite que estos repositorios esten disponibles de manera global. 
+No obstante, aunque la idea basica resulta simple y evidente, tal como suele ser habitual, 
+la dificultad radica en los detalles. Uno de los problemas a abordar es el de la busqueda 
+de OA. Los OA son de naturaleza variopinta y heterogenea, y no resulta obvio cual es la mejor 
+manera de describir un OA y hacer referencia al mismo, por lo que, cuando un usuario 
+desea buscar un OA que pueda serle de utilidad para sus propositos docentes, 
+lo dificil suele ser como encontrar dicho OA entre todos los del repositorio. 
+Para poder hacer este proceso de busqueda lo mas manejable posible es muy importante 
+cuidar al maximo el trabajo previo de etiquetado de los OA, es decir, como caracterizamos 
+cada OA en el momento en que lo aniadimos a un repositorio. 
+En este trabajo proponemos un metodo novedoso que recomienda de manera automatica las 
+categorias a las que pertenece un OA cuando un usuario lo aniade al repositorio. 
+Se utiliza un enfoque de aprendizaje multietiqueta, ya que cada OA puede estar 
+asociado a diferentes categorias. 
+Para poder satisfacer nuestro objetivo de la mejor manera posible se ha 
+desarrollado una metodologia con tres fases, de manera que primero se selecciona el
+ conjunto de caracteristicas de texto mas adecuadas de entre los metadatos que 
+ describen a los OA; en segundo lugar se decide la cantidad de informacion 
+ historica relativa a OA similares al nuevo OA a insertar en el repositorio que 
+ permita mejorar la calidad de la clasificacion; finalmente se elige el algoritmo de aprendizaje 
+ multietiqueta que mejor resultado ofrece. 
+ Se ha llevado a cabo un trabajo experimental sobre un conjunto de 519 OA que 
+ se han recogido en el repositorio AGORA a lo largo de 8 anios. 
+ Se han comparado 13 algoritmos de clasificacion multietiqueta utilizando 16 medidas de evaluacion. 
+ Los resultados obtenidos muestran que la seleccion de caracteristicas permite 
+ reducir el tiempo de ejecucion sin perder precision. 
+ Tambien se ha podido comprobar que la utilizacion de informacion historica acerca 
+ de OA similares al que se esta aniadiendo permite mejorar la calidad de la clasificacion. 
+ Finalmente ha sido posible identificar un conjunto de algoritmos de aprendizaje 
+ multietiqueta que son los que mejor calidad de clasificacion ofrecen sobre nuestros datos. 
+ Todo esto permite recomendar de manera automatica las categorias a las que pertenece 
+ un nuevo OA aniadido al repositorio.
