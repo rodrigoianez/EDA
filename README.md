@@ -1,36 +1,71 @@
-# proyecto Base EDA1-2024
+# 📚 Estructura de Datos y Algoritmos I
 
+Repositorio personal correspondiente a la asignatura **Estructura de Datos y Algoritmos I (EDA1)** del **Grado en Ingeniería Informática**.
 
-Estructura de Datos y Algoritmos I
+En este repositorio se recopilan las prácticas y ejercicios desarrollados durante la asignatura, centrados en el estudio, implementación y utilización de diferentes **estructuras de datos y algoritmos**.
 
-Repositorio personal con las prácticas, ejercicios y trabajos realizados en la asignatura Estructura de Datos y Algoritmos I (EDA1) del Grado en Ingeniería Informática.
+---
 
-📚 Contenido
+## 🛠️ Tecnologías
 
-El repositorio contiene las diferentes prácticas desarrolladas durante la asignatura, incluyendo la implementación y aplicación de diferentes estructuras de datos y algoritmos.
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge\&logo=openjdk\&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge\&logo=git\&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge\&logo=github\&logoColor=white)
 
-Prácticas
-Práctica 01 — Introducción y fundamentos
-Práctica 02 — Estructuras de datos y algoritmos
-Práctica 03 — Estructuras y algoritmos avanzados
+* **Java**
+* **Git**
+* **GitHub**
+* Programación orientada a objetos
+* Estructuras de datos
+* Diseño e implementación de algoritmos
 
+---
 
-🛠️ Tecnologías
-Java
-Git / GitHub
-IntelliJ IDEA / Eclipse (según el entorno utilizado)
-Estructuras de datos y algoritmos
+## 📁 Estructura del repositorio
 
-📁 Estructura
+```text
 IanezHuertasRodrigoEDA1-2024/
-└── src/
-    └── main/
-        └── java/
-            └── eda1/
-                └── practicas/
-                    ├── practica01/
-                    ├── practica02/
-                    └── ...
-🎯 Objetivo
+│
+├── src/
+│   └── main/
+│       └── java/
+│           └── eda1/
+│               └── practicas/
+│                   ├── practica01/
+│                   ├── practica02/
+│                   ├── practica03/
+│                   └── ...
+│
+└── README.md
+```
 
-El objetivo de este repositorio es recopilar el trabajo realizado durante la asignatura y servir como referencia para el estudio y desarrollo de diferentes estructuras de datos, algoritmos y técnicas de programación.
+---
+
+## 🎯 Objetivos
+
+A lo largo de la asignatura se trabajan, entre otros, los siguientes conceptos:
+
+* Implementación y utilización de **estructuras de datos**.
+* Diseño y análisis de **algoritmos**.
+* Programación orientada a objetos.
+* Gestión y manipulación de colecciones de datos.
+* Análisis de eficiencia y complejidad.
+* Resolución de problemas mediante algoritmos.
+
+---
+
+## 💻 Entorno de desarrollo
+
+El proyecto está desarrollado en **Java** y gestionado mediante **Git**, utilizando un entorno de desarrollo compatible con proyectos Java.
+
+---
+
+## 👨‍💻 Autor
+
+**Rodrigo Iáñez Huertas**
+
+🎓 Grado en Ingeniería Informática
+🏫 Universidad de Almería
+
+---
+
